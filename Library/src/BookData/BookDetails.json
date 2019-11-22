@@ -1,0 +1,37 @@
+[
+    {
+    "isbn": 1041287114100,
+    "bookname": "Data Structure",
+    "authorname": "Karumachi",
+    "copy": 500
+    
+    },
+    {
+        "isbn": 1041287114101,
+        "bookname": "Algorithm",
+        "authorname": "Coreman",
+        "copy": 500
+        
+    },
+    {
+        "isbn": 1041287114102,
+        "bookname": "TOC",
+        "authorname": "Sipser",
+        "copy": 500
+        
+    },
+    {
+        "isbn": 1041287114103,
+        "bookname": "Compiler",
+        "authorname": "Ulffman Ahoou",
+        "copy": 500
+        
+    },
+    {
+        "isbn": 1041287114104,
+        "bookname": "Digital Electronics",
+        "authorname": "Morish manno",
+        "copy": 500
+        
+    }
+]

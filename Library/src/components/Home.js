@@ -6,7 +6,7 @@ export class Navbar extends Component {
         return (
         <div>
             
-            <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" height="300" width="1420" />    
+            <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" alt="front-library-img" height="300" width="1420" />    
             <div className="container"> 
                 
             <img  src="https://www.fullstackreact.com/assets/images/30days/30-days-of-react-book-cover-2-as-book-220.png" alt="30 Days of React Mini-Ebook" align="right" />
@@ -16,11 +16,7 @@ export class Navbar extends Component {
                         we're starting from the 
                         <em>very basics</em> and walk <br />through everything 
                         you need to know to get started with <br />React. 
-                        If you've ever wanted to learn React, this is the place to  <br />start!</p>
-                
-                
-                       
-                
+                        If you've ever wanted to learn React, this is the place to  <br />start!</p>   
             </div>
             <div className="button">
                 
@@ -29,10 +25,10 @@ export class Navbar extends Component {
             </div>
         
             
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <tbody>
                 <tr>
-                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/41Q4EVwoFnL._SL160_.jpg" /></td>
+                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/41Q4EVwoFnL._SL160_.jpg" alt="table-img-1" /></td>
                     <td><br /><br />TSEGA ETEFA<br />
                         <b>The Origins of Ethnic Conflict in Africa</b><br />
                         Politics and Violence in Darfur, Oromia, and the Tana Delta
@@ -42,7 +38,7 @@ export class Navbar extends Component {
                     </tr>
                     <tr>
                     <td>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/51TyfqyAYEL._SL160_.jpg" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51TyfqyAYEL._SL160_.jpg" alt="table-img-2"/>
                     </td>
                     <td><br /><br />
                         ERIN-MARIE LEGACEY<br />
@@ -53,7 +49,7 @@ export class Navbar extends Component {
                     </td>
                     </tr>
                 <tr>
-                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/51nn%2BS8jtDL._SL160_.jpg" /></td>
+                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/51nn%2BS8jtDL._SL160_.jpg" alt="table-img-3"/></td>
                     <td><br /><br />JULILLY KOHLER-HAUSMANN<br />
                         <b>Getting Tough</b><br />
                         Welfare and Imprisonment in 1970s America

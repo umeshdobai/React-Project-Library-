@@ -10,11 +10,13 @@ import Student from './components/Student';
 import Admin from './components/Admin';
 import ContactUs from './components/ContactUs';
 import NotFoundpage from './components/NotFoundpage';
+import ShowBookDetails from './components/ShowBookDetails'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome , faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faHome);
+library.add(faHome,faEnvelope);
 
 
 
@@ -24,11 +26,12 @@ function App() {
     <div>
         <Navbar />
         <Switch>
-          <Route path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route path="/student" component={Student}/>
           <Route path="/admin" component={Admin}/>
           <Route path="/contact" component={ContactUs}/>
-          <Route path="/not" component={NotFoundpage}/>
+          <Route path="/showbookdetails" component={ShowBookDetails} />
+          <Route component={NotFoundpage}/>
         </Switch>
     </div>
   );

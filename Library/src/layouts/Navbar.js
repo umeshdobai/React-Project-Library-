@@ -13,8 +13,7 @@ function Navbar() {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav m-auto">
       <li className="nav-item active">
-        <Link className="nav-link text-white text-uppercase ml-5" to="/home"><font size="">Home</font>&nbsp;<FontAwesomeIcon icon="home"
-  />
+        <Link className="nav-link text-white text-uppercase ml-5" to="/"><font size="">Home</font>&nbsp;<FontAwesomeIcon icon="home"/>
         <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
@@ -24,7 +23,7 @@ function Navbar() {
         <Link className="nav-link text-white text-uppercase ml-5" to="/admin">Admin</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link text-white text-uppercase ml-5" to="/contact">Contact Us</Link>
+        <Link className="nav-link text-white text-uppercase ml-5" to="/contact">Contact Us&nbsp;<FontAwesomeIcon icon="envelope"/></Link>
       </li>
       
     </ul>
