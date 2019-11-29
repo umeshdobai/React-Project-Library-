@@ -13,10 +13,13 @@ import NotFoundpage from './components/NotFoundpage';
 import ShowBookDetails from './components/ShowBookDetails'
 
 
+//Font-awesome..........
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome , faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome , faEnvelope , faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Footer from './layouts/Footer';
 
-library.add(faHome,faEnvelope);
+
+library.add(faHome,faEnvelope,faArrowLeft);
 
 
 
@@ -31,8 +34,10 @@ function App() {
           <Route path="/admin" component={Admin}/>
           <Route path="/contact" component={ContactUs}/>
           <Route path="/showbookdetails" component={ShowBookDetails} />
+          <Route path="/showbookdetails" component={ShowBookDetails} />
           <Route component={NotFoundpage}/>
         </Switch>
+        {/* <Footer /> */}
     </div>
   );
 }

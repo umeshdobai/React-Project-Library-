@@ -14,7 +14,8 @@ function ContactUs() {
           <div className="row">
             <div className="col-md-7">
               <iframe
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"
+                title="location"
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEYcallback=myMap"
                 style={{
                   border: '0',
                   width: '100%',

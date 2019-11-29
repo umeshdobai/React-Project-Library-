@@ -1,0 +1,21 @@
+.adminportal-bar{
+   height: 40px;
+   width: 550px;
+   margin-left: 450px;
+   margin-top: 100px;
+   border: 1px solid #F3F5F8;
+   background-color: #BEC1C4;
+   border-radius: 10px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ul li{
+    display: inline;
+    line-height: 1.00cm;
+}
+.addbookform{
+    margin-left: 270px;
+}
+input{
+    border-radius: 5px;
+    line-height: 0.9cm;
+}

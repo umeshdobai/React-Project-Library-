@@ -1,0 +1,55 @@
+
+a{
+    padding: 10px;
+    font-family: inherit;
+    font-size: 15pt;
+    line-height: 1.25rem;
+    color: #fff;
+}
+p{
+    text-align: center;
+
+    margin: 1.5em 0;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    
+    font-size: 18pt;
+}
+
+.button{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 440px;
+
+    padding: 7px 28px 7px;
+    font-size: 23px;
+    border: 0;
+
+    background-color: #e71575;
+    color: #fff;
+
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 350px;
+    line-height: 1.42857143;
+    border-radius: 20px;
+    text-decoration: none;
+
+    
+}
+.book-img{
+    float: right;
+    
+}
+
+
+

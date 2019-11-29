@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.button {
+	margin-bottom: 0 !important;
+	margin-right: .5rem;
+}

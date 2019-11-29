@@ -1,6 +1,5 @@
 import React from 'react'
-import './AdminStyle.css'
-import {Redirect} from 'react-router'
+import './Admin.css'
 
 
 const initialState = {
@@ -29,7 +28,7 @@ class  Admin extends React.Component {
         event.preventDefault()
         const isValid=this.validate();
         if(isValid){
-            console.log(this.state)
+           
 
             //clear form
             this.setState(initialState);
@@ -43,10 +42,10 @@ class  Admin extends React.Component {
             let usernameError = "";
             let passwordError = "";
 
-            if(!this.state.username.includes('@')){
+            if(!username.includes('@' && '.com')){
                 usernameError = "Invalid username"
             }
-            if(this.state.password.length<=5){
+            if(password.length<=5){
                 passwordError = "Password length must be of 6"
             }
             if(usernameError || passwordError){

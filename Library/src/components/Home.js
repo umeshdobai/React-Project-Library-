@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './HomeStyle.css'
+import './Home.css'
+import logo from '../book.png'
 
 export class Navbar extends Component {
     render() {
@@ -9,7 +10,7 @@ export class Navbar extends Component {
             <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" alt="front-library-img" height="300" width="1420" />    
             <div className="container"> 
                 
-            <img  src="https://www.fullstackreact.com/assets/images/30days/30-days-of-react-book-cover-2-as-book-220.png" alt="30 Days of React Mini-Ebook" align="right" />
+            <img  src={logo} alt="30 Days of React Mini-Ebook" align="right" />
 
                     <p>This post is part of the series <b>30 Days of React.</b></p>
                     <p>In this series, 
@@ -20,7 +21,7 @@ export class Navbar extends Component {
             </div>
             <div className="button">
                 
-                <a>DOWNLOAD THE FREE PDF</a>
+                <a >DOWNLOAD THE FREE PDF</a>
                 
             </div>
         
