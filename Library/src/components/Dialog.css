@@ -1,0 +1,37 @@
+ .dialogStyles  {
+    width:500px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    background-color: #F4F3f3;
+    padding: 10px 20px 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.dialogClosedButtonStyles {
+    margin-bottom:15px;
+    padding: 3px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    width:30px;
+    height: 30px;
+    font-weight: bold;
+    align-self: flex-end;
+    background-color: #3A86C3;
+}
+.dialogClosedButtonStyles:hover{
+    background-color: #F98B8B;
+}
+.dialogBanner{
+    width: 480px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    background-color: #3A86C3;
+}

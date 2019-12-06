@@ -1,12 +1,14 @@
 import React from 'react'
 import './Admin.css'
+import { Alert } from 'antd';
 
 
 const initialState = {
     username:"",
     password:"",
     usernameError: "",
-    passwordError: ""
+    passwordError: "",
+    success: false
 }
 class  Admin extends React.Component {
     constructor(props) {
@@ -29,13 +31,18 @@ class  Admin extends React.Component {
         const isValid=this.validate();
         if(isValid){
            
+            this.setState({success: true})
 
             //clear form
             this.setState(initialState);
+            
             //Redirection
             this.props.history.push('/showbookdetails')
         }
     }
+    // onClose = e => {
+    //     console.log(e, 'I was closed.');
+    //   };
 
     validate = () =>{
         const { username, password } = this.state;
@@ -92,10 +99,21 @@ class  Admin extends React.Component {
           </div>
 
           <div style={{fontSize : 15 , color : "red" , textAlign : "center" , fontWeight : "bold"}}>{this.state.passwordError}</div>
+            {/* <div>
+                <Alert
+                message="asdhfjkashf"
+                description={this.state.passwordError}
+                type="error"
+                closable
+                onClose={this.onClose()}
+                />
+            </div> */}
                           
             <div className="form-group">
                 
-                    <button className="btn btn-primary btn-block" type="submit">
+                    <button className="btn btn-primary btn-block" 
+                    type="submit"
+                    disabled={this.state.success}>
                     Submit
                     </button>
                 

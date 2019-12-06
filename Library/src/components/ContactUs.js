@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 function ContactUs() {
     return (
