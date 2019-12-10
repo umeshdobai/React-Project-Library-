@@ -1,6 +1,6 @@
 import React from 'react'
 import './Admin.css'
-import { Alert } from 'antd';
+import admininfo from './admininfo/AdminInfo.json'
 
 
 const initialState = {
@@ -8,12 +8,18 @@ const initialState = {
     password:"",
     usernameError: "",
     passwordError: "",
-    success: false
+    error: "",
+    success: false,
+    
 }
+
+
 class  Admin extends React.Component {
     constructor(props) {
         super(props)
         this.state = initialState;
+        
+        
     }
 
     handleUsernameChange = event =>{
@@ -29,20 +35,27 @@ class  Admin extends React.Component {
     handleSubmit = event =>{
         event.preventDefault()
         const isValid=this.validate();
-        if(isValid){
-           
-            this.setState({success: true})
+        if(isValid)
+        {
+        
+            admininfo.map((admindata,key) => {
+                if(this.state.username === admindata.username && this.state.password === admindata.password){
+                    this.setState({success: true})
 
-            //clear form
-            this.setState(initialState);
-            
-            //Redirection
-            this.props.history.push('/showbookdetails')
+                    //clear form
+                    this.setState(initialState);
+                    
+                    //Redirection
+                    this.props.history.push('/showbookdetails')
+                }
+                else
+                {
+                    this.setState(initialState);
+                    this.setState({error: "Inavlid credentials"})
+                }
+            })
         }
     }
-    // onClose = e => {
-    //     console.log(e, 'I was closed.');
-    //   };
 
     validate = () =>{
         const { username, password } = this.state;
@@ -58,8 +71,7 @@ class  Admin extends React.Component {
             if(usernameError || passwordError){
                 this.setState({usernameError,passwordError});
                 return false;
-            }
-            
+            }    
             return true;
     }
     
@@ -99,15 +111,7 @@ class  Admin extends React.Component {
           </div>
 
           <div style={{fontSize : 15 , color : "red" , textAlign : "center" , fontWeight : "bold"}}>{this.state.passwordError}</div>
-            {/* <div>
-                <Alert
-                message="asdhfjkashf"
-                description={this.state.passwordError}
-                type="error"
-                closable
-                onClose={this.onClose()}
-                />
-            </div> */}
+            
                           
             <div className="form-group">
                 
@@ -118,6 +122,7 @@ class  Admin extends React.Component {
                     </button>
                 
             </div>
+            <div style={{fontSize : 15 , color : "red" , textAlign : "center" , fontWeight: "bold"}}>{this.state.error}</div>
             <div style={{fontSize : 15 , color : "red" , textAlign : "center" }}>* mark fields are required</div>
         </form>
         </div>

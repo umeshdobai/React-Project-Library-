@@ -7,7 +7,8 @@ export class Navbar extends Component {
         return (
         <div>
             
-            <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" alt="front-library-img" height="300" width="1420" />    
+            <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" alt="front-library-img" height="300" width="1420" />
+               
             <div className="container"> 
                 
             <img  src={logo} alt="30 Days of React Mini-Ebook" align="right" />
@@ -24,13 +25,13 @@ export class Navbar extends Component {
                 <a >DOWNLOAD THE FREE PDF</a>
                 
             </div>
-        
+            <br />
             
             <table className="table table-hover">
                 <tbody>
                 <tr>
-                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/41Q4EVwoFnL._SL160_.jpg" alt="table-img-1" /></td>
-                    <td><br /><br />TSEGA ETEFA<br />
+                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/41Q4EVwoFnL._SL160_.jpg" alt="table-img-1" width="100px" /></td>
+                    <td><br />TSEGA ETEFA<br />
                         <b>The Origins of Ethnic Conflict in Africa</b><br />
                         Politics and Violence in Darfur, Oromia, and the Tana Delta
                         Palgrave Macmillan, 2019
@@ -39,9 +40,9 @@ export class Navbar extends Component {
                     </tr>
                     <tr>
                     <td>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/51TyfqyAYEL._SL160_.jpg" alt="table-img-2"/>
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51TyfqyAYEL._SL160_.jpg"  width="100px" alt="table-img-2"/>
                     </td>
-                    <td><br /><br />
+                    <td><br />
                         ERIN-MARIE LEGACEY<br />
                         <b>Making Space for the Dead</b><br />
                         Catacombs, Cemeteries, and the Reimagining of Paris, 1780-1830
@@ -50,12 +51,12 @@ export class Navbar extends Component {
                     </td>
                     </tr>
                 <tr>
-                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/51nn%2BS8jtDL._SL160_.jpg" alt="table-img-3"/></td>
+                    <td><img src="https://images-na.ssl-images-amazon.com/images/I/51nn%2BS8jtDL._SL160_.jpg"  width="100px" alt="table-img-3"/></td>
                     <td><br /><br />JULILLY KOHLER-HAUSMANN<br />
                         <b>Getting Tough</b><br />
                         Welfare and Imprisonment in 1970s America
                         Princeton University Press, 2017
-                        August 7, 2019 Stephen Colbr /ook
+                        August 7, 2019 Stephen Colbr /rook
 
                     </td>
                 </tr>

@@ -1,78 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import booklist from './booklist/BookList.json'
 import './ShowBookDetails.css'
 import 'antd/dist/antd.css';
 
-
-//Json Data
-var booklist=
-[
-  {
-  id: 1,
-  isbn: 1041287114100,
-  bookname: "Data Structure",
-  authorname: "Karumachi",
-  copy: 500
-  
-  },
-  {
-      id: 2,
-      isbn: 1041287114101,
-      bookname: "Algorithm",
-      authorname: "Coreman",
-      copy: 500
-      
-  },
-  {
-      id: 3,
-      isbn: 1041287114102,
-      bookname: "TOC",
-      authorname: "Sipser",
-      copy: 500
-      
-  },
-  {
-      id: 4,
-      isbn: 1041287114103,
-      bookname: "Compiler",
-      authorname: "Ulffman Ahoou",
-      copy: 500
-      
-  },
-  {
-      id: 5,
-      isbn: 1041287114104,
-      bookname: "Digital Electronics",
-      authorname: "Morish manno",
-      copy: 500
-      
-  },
-  {
-    id: 6,
-    isbn: 1041287114105,
-    bookname: "Computer Network",
-    authorname: "Forouzzen",
-    copy: 500
-    
-  },
-  {
-    id: 7,
-    isbn: 1041287114106,
-    bookname: "Operating System",
-    authorname: "Galvin",
-    copy: 500
-    
-  },
-  {
-    id: 8,
-    isbn: 1041287114107,
-    bookname: "Database",
-    authorname: "Navathe",
-    copy: 500
-    
-  }
-]
 
 //searching funtion
 function searchingFor(term){
@@ -85,10 +17,11 @@ function searchingFor(term){
     else{
       return !term
     }
+
+    //Searching by bookname
     // return x.bookname.toLowerCase().includes(term.toLowerCase()) || !term;
     
   }
-
 }
 
  class ShowBookDetails extends Component {
@@ -106,10 +39,10 @@ function searchingFor(term){
       bookname: "",
       authorname: "",
       copy: "",
-      editing: true,
+      editing: true,  //This is using for set submit button false while we are updating
       booklist: booklist, 
-      term: "",
-      bookId: ""
+      term: "", //This is using for seaching
+      bookId: "", //This is an itermediate state to store the id for updating
     }
     this.searchHandler = this.searchHandler.bind(this);
   }
@@ -135,17 +68,33 @@ function searchingFor(term){
   }
 
 
-  //Update Opeartion
+  //This funstion is using to set the submit button false and update button true
   renderEditForm = () => {
     if (!this.state.editing) {
-      return <div><form onSubmit={this.updateHandler}>
-                <React.Fragment>
+      return <div className="cancelSubmitButton"><form onSubmit={this.updateHandler}>
+                  <br />
                   <button>Update</button>
                   <button onClick={() => this.setEdit()}>cancel</button>
-                </React.Fragment>
+                
             </form></div>
     }
   }
+
+  //After clicking on the edit button this will set the corresponding fields
+  editHandle = (id) =>{
+    this.bookId=id;
+    console.log(id);
+    let newArr=booklist.filter(product => product.id===id);
+    console.log( newArr[0].bookname)
+    this.setState({ isbn: newArr[0].isbn,
+                    bookname: newArr[0].bookname,
+                    authorname: newArr[0].authorname,
+                    copy: newArr[0].copy,
+                    editing: false
+                  })
+  }
+
+  //After edit update operation
   updateHandler = (event) =>{
     event.preventDefault(); 
     console.log(this.bookId)
@@ -159,29 +108,15 @@ function searchingFor(term){
                     }
     console.log(updateObj)
     let finalObj = {
-      ...this.state.booklist.slice(0,indexObj) , 
-      updateObj , 
-      ...this.state.booklist.slice(indexObj+1)
+      ...this.state.booklist.splice(indexObj,1,updateObj) 
+      
     }
-    console.log(finalObj);
+    finalObj=this.state.booklist;
+    this.setState({booklist: finalObj})
 
   }
   
-  //Edit Operation
-  editHandle = (id) =>{
-      this.bookId=id;
-      console.log(id);
-      let newArr=booklist.filter(product => product.id===id);
-      console.log( newArr[0].bookname)
-      this.setState({ isbn: newArr[0].isbn,
-                      bookname: newArr[0].bookname,
-                      authorname: newArr[0].authorname,
-                      copy: newArr[0].copy,
-                      editing: false
-                    })
-  }
-
-
+  
   //Delete Operation
   deleteHandle = (id) => {
       console.log(id) 
@@ -234,34 +169,32 @@ function searchingFor(term){
     
       return (
         <React.Fragment>
-          
 
-          {/* <div>
+          {/* This is for giving right click functionalities */}
+          {/* <div> 
+                <ContextMenuTrigger id="some_unique_identifier">
+                  <div className="well">Right click to see the menu</div>
+                </ContextMenuTrigger>
 
-    <ContextMenuTrigger id="some_unique_identifier">
-      <div className="well">Right click to see the menu</div>
-    </ContextMenuTrigger>
+                <ContextMenu id="some_unique_identifier">
+                  <MenuItem>
+                    ContextMenu Item 1
+                  </MenuItem>
+                  <MenuItem>
+                    ContextMenu Item 2
+                  </MenuItem>
+                  <MenuItem divider />
+                  <MenuItem>
+                    ContextMenu Item 3
+                  </MenuItem>
+                </ContextMenu>
 
-    <ContextMenu id="some_unique_identifier">
-      <MenuItem>
-        ContextMenu Item 1
-      </MenuItem>
-      <MenuItem>
-        ContextMenu Item 2
-      </MenuItem>
-      <MenuItem divider />
-      <MenuItem>
-        ContextMenu Item 3
-      </MenuItem>
-    </ContextMenu>
+              </div> */}
 
-  </div> */}
-  
-        
         <div className="error-actions">
-        <Link to="/admin" className="btn btn-outline-primary btn-lg">
-            <FontAwesomeIcon icon="arrow-left"/>
-            &nbsp;Back
+        <Link to="/admin" className="btn btn-outline-dark">
+            <FontAwesomeIcon icon="sign-out-alt"/>
+            &nbsp;logout
         </Link>
         </div>
         <br /><br />
@@ -302,8 +235,8 @@ function searchingFor(term){
                 <React.Fragment>     
                   
                 </React.Fragment>
-              )}
-              
+              )
+            }    
           </React.Fragment>  
           <br />     
           </form>
@@ -313,16 +246,23 @@ function searchingFor(term){
 
 
         {/* Searching */}
-        <input type="text"
-                 placeholder="search by Isbn" 
-                 onChange={this.searchHandler}
-                 value={this.term}/>
+        <div className="input-group">
+          <div className="input-group-prepend">
+              <span className="input-group-text"><FontAwesomeIcon icon="search" /></span>
+          </div>
+            <input type="text" 
+                    name="isbn" 
+                    placeholder="Enter Isbn"
+                    value={this.state.term}
+                    onChange={this.searchHandler} />
+    `       </div>
+        <br />
 
           <div className="table table-striped">
           <table className='table'>
             <thead className="thead-dark">
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>ISBN &nbsp;&nbsp;</th>
                 <th>Book Name</th>
                 <th>Author Name</th>
@@ -336,15 +276,15 @@ function searchingFor(term){
               this.state.booklist.filter(searchingFor(this.state.term)).map((book) => {
                   return( 
                       <tr key={book.id}>
-                          <td></td>
+                          <td>{book.id}</td>
                           <td>{book.isbn}</td>
                           <td> {book.bookname}</td>
                           <td> {book.authorname}</td>
                           <td>{book.copy}</td>
                           <td>
                             
-                            <a href="#" onClick={()=>this.editHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Edit</a>|
-                            <a href="#" onClick={()=>this.deleteHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Delete</a>
+                            <a  onClick={()=>this.editHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Edit</a>|
+                            <a  onClick={()=>this.deleteHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Delete</a>
                           </td>
                       </tr>
                       )      

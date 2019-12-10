@@ -1,10 +1,38 @@
-import React from 'react'
-import data from '../StudentData/StudentInfo.json'
+import React, { Component } from 'react'
+import data from './StudentData/StudentInfo.json'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Student() {
-    return (
-        
-        <div>
+
+function serachingFor(term)
+{
+    return function(x){
+        if(x.Sid == term)
+        {
+            return x;
+        }
+        else{
+            return !term;
+        }
+    }
+}
+
+export class Student extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             term: ""
+        }
+        this.searchHandler = this.searchHandler.bind(this)
+    }
+    
+
+    searchHandler = (event) => {
+        this.setState({term: event.target.value})
+    }
+    render() {
+        return (
+            <div>
             
             <br/><br/>
             <div>
@@ -16,9 +44,17 @@ function Student() {
             <br/><br/><br/>
             
             <form>
-                
-           
-
+                <div className="input-group">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text"><FontAwesomeIcon icon="search" /></span>
+                    </div>
+                    <input type="text" 
+                           name="sid" 
+                           placeholder="Enter your SID"
+                           value={this.state.term}
+                           onChange={this.searchHandler} />
+                </div>
+                <br />
             </form>
             <div className="table table-striped">
                 <table className='table'>
@@ -36,7 +72,7 @@ function Student() {
                 <tbody>
                     
                     {
-                        data.map((Studentdata,key) => {
+                        data.filter(serachingFor(this.state.term)).map((Studentdata,key) => {
                             return( 
                                 <tr key={Studentdata.id}>
                                     <td></td>
@@ -54,12 +90,10 @@ function Student() {
                 </tbody>
                 </table>
             </div>
-            {/* <h2>Student</h2>
-            {data.map((Studentdata,key) => {
-                return <h1 key={Studentdata.id}>{Studentdata.Fname}</h1>
-            })} */}
+            
         </div>
-    )
+        )
+    }
 }
 
 export default Student

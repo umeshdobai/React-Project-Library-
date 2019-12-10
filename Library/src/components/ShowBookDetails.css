@@ -13,18 +13,14 @@ ul li{
     line-height: 1.00cm;
 }
 .addbookform{
-    margin-left: 400px;
+    margin-left: 350px;
 }
 input{
     border-radius: 5px;
 }
-.container{
-    background: #f6f6f6;
+.error-actions{
+    float: right;
 }
-.context-menu{
-    width: 200px;
-    height: auto;
-    box-shadow: 0 0 20px 0 #ccc;
-    position: absolute;
-    
+.cancelSubmitButton{
+    margin-left: 600px;
 }

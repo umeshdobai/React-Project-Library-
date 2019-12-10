@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 function ContactUs() {
     return (
@@ -58,7 +57,7 @@ function ContactUs() {
                   rows="3"
                   placeholder="Message"
                 />
-                <Link className="btn btn-outline-primary text-uppercase mt-1">
+                <Link className="btn btn-outline-dark text-uppercase mt-1">
                   <i className="fa fa-paper-plane-o" aria-hidden="true" />
                   <i className="fab fa-telegram-plane" />
                   &nbsp;Send

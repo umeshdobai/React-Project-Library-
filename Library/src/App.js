@@ -15,12 +15,10 @@ import ShowBookDetails from './components/ShowBookDetails'
 
 //Font-awesome..........
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome , faEnvelope , faArrowLeft ,faFilter} from '@fortawesome/free-solid-svg-icons';
-import Footer from './layouts/Footer';
-import Test from './components/Test';
+import { faHome , faEnvelope , faArrowLeft ,faFilter ,faSearch,faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 
-library.add(faHome,faEnvelope,faArrowLeft,faFilter);
+library.add(faHome,faEnvelope,faArrowLeft,faFilter,faSearch,faSignOutAlt);
 
 
 
@@ -36,7 +34,6 @@ function App() {
           <Route path="/contact" component={ContactUs}/>
           <Route path="/showbookdetails" component={ShowBookDetails} />
           <Route path="/showbookdetails" component={ShowBookDetails} />
-          <Route path="/test" component={Test} />
           <Route component={NotFoundpage}/>
         </Switch>
         {/* <Footer /> */}

@@ -1,0 +1,82 @@
+[
+    {
+    "id": 1,
+    "isbn": 1041287114100,
+    "bookname": "Data Structure",
+    "authorname": "Karumachi",
+    "copy": 500
+    
+    },
+    {
+        "id": 2,
+        "isbn": 1041287114101,
+        "bookname": "Algorithm",
+        "authorname": "Coreman",
+        "copy": 500
+        
+    },
+    {
+        "id": 3,
+        "isbn": 1041287114102,
+        "bookname": "TOC",
+        "authorname": "Sipser",
+        "copy": 500
+        
+    },
+    {
+        "id": 4,
+        "isbn": 1041287114103,
+        "bookname": "Compiler",
+        "authorname": "Ulffman Ahoou",
+        "copy": 500
+        
+    },
+    {
+        "id": 5,
+        "isbn": 1041287114104,
+        "bookname": "Digital Electronics",
+        "authorname": "Morish manno",
+        "copy": 500
+        
+    },
+    {
+      "id": 6,
+      "isbn": 1041287114105,
+      "bookname": "Computer Network",
+      "authorname": "Forouzzen",
+      "copy": 500
+      
+    },
+    {
+      "id": 7,
+      "isbn": 1041287114106,
+      "bookname": "Operating System",
+      "authorname": "Galvin",
+      "copy": 500
+      
+    },
+    {
+      "id": 8,
+      "isbn": 1041287114107,
+      "bookname": "Database",
+      "authorname": "Navathe",
+      "copy": 500
+      
+    },
+    {
+      "id": 9,
+      "isbn": 1041287114108,
+      "bookname": "Engineering Math",
+      "authorname": "Kreszwig",
+      "copy": 500
+      
+    },
+    {
+      "id": 10,
+      "isbn": 1041287114109,
+      "bookname": "Discrete Math",
+      "authorname": "B.V Balakrishnan",
+      "copy": 500
+      
+    }
+  ]
