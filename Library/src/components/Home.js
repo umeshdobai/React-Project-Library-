@@ -7,9 +7,9 @@ export class Navbar extends Component {
         return (
         <div>
             
-            <img src="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/829/news/large_news888872_880911.png" alt="front-library-img" height="300" width="1420" />
+            <img src="https://www.fullstackreact.com/assets/images/30days/30-days-of-react-header.jpg" alt="front-library-img" height="300" width="1420" />
                
-            <div className="container"> 
+            <div className="container"> <br />
                 
             <img  src={logo} alt="30 Days of React Mini-Ebook" align="right" />
 

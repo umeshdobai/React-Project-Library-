@@ -15,7 +15,7 @@ function ContactUs() {
             <div className="col-md-7">
               <iframe
                 title="location"
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEYcallback=myMap"
+                src="https://maps.google.com/maps?q=Marlabs%20Innovations%20Pvt.%20Ltd.&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 style={{
                   border: '0',
                   width: '100%',

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ShowBookDetails from '../components/ShowBookDetails';
 
 function Navbar() {
+  var logout=false;
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
   
@@ -32,6 +34,18 @@ function Navbar() {
         <button   class="btn btn-primary" type="submit">Login</button>
            
   </form> */}
+  {
+              logout ? (
+                <React.Fragment>
+                 <button   className="btn btn-success" type="submit">logout</button>
+                </React.Fragment>
+              ):(
+                <React.Fragment>  
+                     
+                </React.Fragment>
+              )
+            }
+  
   </div>
 </nav>
   );

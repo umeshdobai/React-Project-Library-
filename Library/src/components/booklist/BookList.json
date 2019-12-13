@@ -4,7 +4,8 @@
     "isbn": 1041287114100,
     "bookname": "Data Structure",
     "authorname": "Karumachi",
-    "copy": 500
+    "copy": 500,
+    "src": "https://images-eu.ssl-images-amazon.com/images/I/51GZXODn2ML.jpg"
     
     },
     {
@@ -12,7 +13,8 @@
         "isbn": 1041287114101,
         "bookname": "Algorithm",
         "authorname": "Coreman",
-        "copy": 500
+        "copy": 500,
+        "src": "https://images-na.ssl-images-amazon.com/images/I/41-1VkO%2B1lL._SX359_BO1,204,203,200_.jpg"
         
     },
     {
@@ -20,15 +22,17 @@
         "isbn": 1041287114102,
         "bookname": "TOC",
         "authorname": "Sipser",
-        "copy": 500
+        "copy": 500,
+        "src": "https://images-na.ssl-images-amazon.com/images/I/41HYcr8ZodL._SX324_BO1,204,203,200_.jpg"
         
     },
     {
         "id": 4,
         "isbn": 1041287114103,
         "bookname": "Compiler",
-        "authorname": "Ulffman Ahoou",
-        "copy": 500
+        "authorname": "Ulffman Aho",
+        "copy": 500,
+        "src": "https://images-na.ssl-images-amazon.com/images/I/812oqPvEctL.jpg"
         
     },
     {
@@ -36,7 +40,8 @@
         "isbn": 1041287114104,
         "bookname": "Digital Electronics",
         "authorname": "Morish manno",
-        "copy": 500
+        "copy": 500,
+        "src": "https://easyengineering.net/wp-content/uploads/2018/03/digital-logic-computer-design-original-imadbn5y4vdhbr4q.jpeg"
         
     },
     {
@@ -44,7 +49,8 @@
       "isbn": 1041287114105,
       "bookname": "Computer Network",
       "authorname": "Forouzzen",
-      "copy": 500
+      "copy": 500,
+      "src": "https://images-na.ssl-images-amazon.com/images/I/71gfvWeTAiL.jpg"
       
     },
     {
@@ -52,7 +58,8 @@
       "isbn": 1041287114106,
       "bookname": "Operating System",
       "authorname": "Galvin",
-      "copy": 500
+      "copy": 500,
+      "src": "https://images-na.ssl-images-amazon.com/images/I/81eF-RxjuaL.jpg"
       
     },
     {
@@ -60,7 +67,8 @@
       "isbn": 1041287114107,
       "bookname": "Database",
       "authorname": "Navathe",
-      "copy": 500
+      "copy": 500,
+      "src": "https://www.pearsonhighered.com/assets/bigcovers/0/1/3/6/0136086209.jpg"
       
     },
     {
@@ -68,7 +76,8 @@
       "isbn": 1041287114108,
       "bookname": "Engineering Math",
       "authorname": "Kreszwig",
-      "copy": 500
+      "copy": 500,
+      "src": "https://images-na.ssl-images-amazon.com/images/I/510o8RjmPML._SX383_BO1,204,203,200_.jpg"
       
     },
     {
@@ -76,7 +85,8 @@
       "isbn": 1041287114109,
       "bookname": "Discrete Math",
       "authorname": "B.V Balakrishnan",
-      "copy": 500
+      "copy": 500,
+      "src": "https://images-na.ssl-images-amazon.com/images/I/51mqC0A1XBL._SX346_BO1,204,203,200_.jpg"
       
     }
   ]

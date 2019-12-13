@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import booklist from './booklist/BookList.json'
+import {ContextMenuTrigger,ContextMenu,MenuItem} from 'react-contextmenu' 
 import './ShowBookDetails.css'
 import 'antd/dist/antd.css';
 
@@ -43,6 +44,7 @@ function searchingFor(term){
       booklist: booklist, 
       term: "", //This is using for seaching
       bookId: "", //This is an itermediate state to store the id for updating
+      showImg: false//This is for switching of image
     }
     this.searchHandler = this.searchHandler.bind(this);
   }
@@ -61,8 +63,9 @@ function searchingFor(term){
               authorname : this.authorname.current.value,
               copy : this.copy.current.value,
               });
-  sessionStorage.setItem('data',JSON.stringify(booklist));
   this.setState({booklist: ArrList});
+  var temp=[];
+  sessionStorage.setItem('data',JSON.stringify(booklist));
 
   
   }
@@ -129,6 +132,16 @@ function searchingFor(term){
     this.setState({term: event.target.value})
   }
 
+  //Image Handler
+  switchImg = () => {
+    this.setState({showImg: !this.state.showImg})
+  }
+
+  //ContextMenu
+  showContextMenu = () => {
+    return false;
+  }
+
   handleIsbnChange = (event) => {
       this.setState({
         isbn: event.target.value
@@ -190,6 +203,7 @@ function searchingFor(term){
                 </ContextMenu>
 
               </div> */}
+              
 
         <div className="error-actions">
         <Link to="/admin" className="btn btn-outline-dark">
@@ -240,8 +254,9 @@ function searchingFor(term){
           </React.Fragment>  
           <br />     
           </form>
+          {this.renderEditForm()}
         </div>
-        {this.renderEditForm()}
+        
         <br /><br /><br />
 
 
@@ -255,43 +270,64 @@ function searchingFor(term){
                     placeholder="Enter Isbn"
                     value={this.state.term}
                     onChange={this.searchHandler} />
-    `       </div>
+         </div>
         <br />
 
           <div className="table table-striped">
-          <table className='table'>
-            <thead className="thead-dark">
-              <tr>
-                <th>#</th>
-                <th>ISBN &nbsp;&nbsp;</th>
-                <th>Book Name</th>
-                <th>Author Name</th>
-                <th>No of Copies</th>
-                <th>&nbsp;&nbsp;&nbsp;Operations</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
+            <ContextMenuTrigger id="menu-trigger">
+            <table className='table'>
+              <thead className="thead-dark">
+                <tr>
+                  <th><button className="btn btn-outline-secondary" onClick={this.switchImg}>{this.state.showImg ? "Show" : "Hide"} Image</button></th>
+                  <th>ISBN &nbsp;&nbsp;</th>
+                  <th>Book Name</th>
+                  <th>Author Name</th>
+                  <th>No of Copies</th>
+                  <th>&nbsp;&nbsp;Operations</th>
+                </tr>
+              </thead>
+              <tbody>
               
-              this.state.booklist.filter(searchingFor(this.state.term)).map((book) => {
-                  return( 
-                      <tr key={book.id}>
-                          <td>{book.id}</td>
-                          <td>{book.isbn}</td>
-                          <td> {book.bookname}</td>
-                          <td> {book.authorname}</td>
-                          <td>{book.copy}</td>
-                          <td>
+              {
+                
+                this.state.booklist.filter(searchingFor(this.state.term)).map((book) => {
+                    return( 
+                        <tr key={book.id}>
                             
-                            <a  onClick={()=>this.editHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Edit</a>|
-                            <a  onClick={()=>this.deleteHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Delete</a>
-                          </td>
-                      </tr>
-                      )      
-                  })
-            } 
-            </tbody>
-          </table>
+                              {
+                                this.state.showImg ? (
+                                  <td></td>
+                                ):(
+                                  <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src={book.src} width="50px" />
+                                  </td>
+                                )
+                              }
+                            
+                            <td>{book.isbn}</td>
+                            <td> {book.bookname}</td>
+                            <td> {book.authorname}</td>
+                            <td>{book.copy}</td>
+                            <td>
+                              
+                              <a  onClick={()=>this.editHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Edit</a>|
+                              <a  onClick={()=>this.deleteHandle(book.id)} style={{fontSize : 15 , color : "black" }}>Delete</a>
+                            </td>
+                            <div  className="container-menu">
+                                <ContextMenu id="menu-trigger" className="contextmenu">
+                                  <MenuItem className="menuitems">Edit </MenuItem>
+                                  <MenuItem className="menuitems">Delete</MenuItem>
+                                  <MenuItem className="separator" divider />
+                                  <MenuItem className="menuitems">Details</MenuItem>
+                                </ContextMenu>
+                            </div>
+                        </tr>
+                        )      
+                    })
+              } 
+              </tbody>
+            </table>
+           </ContextMenuTrigger>  
         </div>
           
 

@@ -2,9 +2,5 @@
     {
         "username": "umesh@gmail.com" ,
         "password": "umesh@123"
-    },
-    {   
-        "username": "xyz@gmail.com" ,
-        "password": "xyz@123"
-    }   
+    }  
 ]

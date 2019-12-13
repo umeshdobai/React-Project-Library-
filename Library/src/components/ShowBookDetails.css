@@ -24,3 +24,21 @@ input{
 .cancelSubmitButton{
     margin-left: 600px;
 }
+.container-menu{
+    background: black;
+    width: 200px;
+    height: 200px;
+    height: auto;
+    box-shadow: 0 0 20px 0 #ccc;
+    position: absolute;
+
+
+}
+
+.separator{
+    height: 1px;
+    background: #dedede;
+    margin: 2px 0px 2px 0px;
+
+}
+
